@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="height=device-height, initial-scale=1.5">
+  <link rel="stylesheet" href="vue-app.css">
+  <link rel="stylesheet" href="mobile-vue.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    let options = [
+      {
+        id: 0,
+        name: 'Arcade',
+
+      },
+      {
+        id: 1,
+        name: 'Advanced',
+
+      },
+      {
+        id: 2,
+        name: 'Pro',
+
+      },
+      {
+        id: 3,
+        name: 'Online services',
+
+      },
+      {
+        id: 4,
+        name: 'Larger storage',
+
+      },
+      {
+        id: 5,
+        name: 'Customizable Profile',
+
+      },
+    ]
+  </script>
+
+  <div class="form-back">
+    
+    <div id="app">
+      <div class="blue-left">
+        <div class="steps">
+          <p class="numbers" id="num1">1</p>
+          <div class="step1">
+            <p class="thin">{{ stepone }}</p>
+            <h4 class="step-title">{{ info }}</h4>
+          </div>
+          <p class="numbers" id="num2">2</p>
+          <div class="step2">
+            <p class="thin">{{ steptwo }}</p>
+            <h4 class="step-title">{{ plan }}</h4>
+          </div>
+          <p class="numbers" id="num3">3</p>
+          <div class="step3">
+            <p class="thin">{{ stepthree }}</p>
+            <h4 class="step-title">{{ addons }}</h4>
+          </div>
+          <p class="numbers" id="num4">4</p>
+          <div class="step4">
+            <p class="thin">{{ stepfour }}</p>
+            <h4 class="step-title">{{ summary }}</h4>
+          </div>
+        </div>
+      </div>
+      <div id="page1">
+        <h1>Personal Info</h1><br>
+        <p class="subhead">Please provide your name, email address, and phone number.</p>
+        <div class="white-right">
+          <label for="name">Name</label>
+          <input type="text" placeholder="e.g. Stephen King" required></input>
+          <label for="email">Email Address</label>
+          <input type="email" placeholder="e.g. stephenking@lorem.com" required></input>
+          <label for="tel">Phone Number</label>
+          <input type="tel" placeholder="e.g. +1 234 567 890" required></input>
+        </div>
+        <button id="next">Next Step</button>
+        <div class="mobile-btn">
+          <button id="next" class="phone-btn">Next Step</button>
+          </div>
+      </div>
+
+      <div id="page2">
+        <h1>Select your plan</h1><br>
+        <p class="subhead">You have the option of monthly or yearly billing.</p>
+        <div class="plan-select">
+          <div @click="planSelect" @click="addToCart('arcade')" class="boxes" id="box1"
+            v-model.number="inventory.arcade">
+            <h4 class="plan-title">Arcade</h4>
+            <p class="price">$9/mo</p>
+          </div>
+          <div @click="planSelect2" @click="addToCart('advanced')" class="boxes" id="box2"
+            v-model.number="inventory.advanced">
+            <h4 class="plan-title">Advanced</h4>
+            <p class="price">$12/mo</p>
+          </div>
+          <div @click="planSelect3" @click="addToCart('pro')" class="boxes" id="box3" v-model.number="inventory.pro">
+            <h4 class="plan-title">Pro</h4>
+            <p class="price">$15/mo</p>
+          </div>
+          <div class="month-year">
+            <div class="month">Monthly</div>
+            <input type="checkbox" role="switch" id="chbox" onclick="switched()" @click="switchMonthYear()"></input>
+            <span class="check"></span>
+            <div class="year">Yearly</div>
+          </div>
+        </div>
+        <button class="back" id="backbtn" onclick="prevPage()">Go Back</button>
+        <button id="next2">Next Step</button>
+        <div class="mobile-btn"></div>
+      </div>
+
+      <div id="page3">
+        <h1>Pick add-ons</h1><br>
+        <p class="subhead">Add-ons help enhance your gaming experience.</p>
+        <div class="plan-select2">
+        <div class="checkboxes">
+          <input type="checkbox" id="check1" @click="toggleChk" @click="addToCart('onlineServices')">
+          <div class="extra-titles">
+            Online services<br>
+            <p class="subxtra">Access to mutliplayer games</p>
+          </div>
+        </div>
+        <div class="checkboxes">
+          <input type="checkbox" id="check2" @click="toggleChk2" @click="addToCart('largerStorage')">
+          <div class="extra-titles">
+            Larger storage<br>
+            <p class="subxtra">Extra 1TB of cloud save</p>
+          </div>
+        </div>
+        <div class="checkboxes">
+          <input type="checkbox" id="check3" @click="toggleChk3" @click="addToCart('customizableProfile')">
+          <div class="extra-titles">
+            Customizable Profile<br>
+            <p class="subxtra">Custom theme on your profile</p>
+          </div>
+        </div>
+        </div>
+        <button class="back" id="backbtn2" onclick="prevPage2()">Go Back</button>
+        <button id="next3">Next Step</button>
+        <div class="mobile-btn"></div>
+      </div>
+
+      <div id="page4">
+        <h1>Finishing up</h1><br>
+        <p class="subhead">Double-check everything looks OK before confirming.</p>
+        <div class="plan-select3">
+        <div id="price-section">
+          <div id="plan-type" onclick="goBack()">{{ planChoice }}<span class="yearly-monthly">(Monthly)</span><br>{{
+            change }}</div>
+          <span id="subprice">{{ planPrice }}</span>
+        </div>
+        <div id="price-section2">
+          <div class="bonus-items">
+            <div v-if="isVisible" class="xitems">
+              <p class="additem">{{ online }}</p>
+              <span class="addprice">+${{ cart.onlineServices }}/mo</span>
+            </div>
+            <div v-if="isVisible2" class="xitems">
+              <p class="additem">{{ larger }}</p>
+              <span class="addprice">+${{ cart.largerStorage }}/mo</span>
+            </div>
+            <div v-if="isVisible3" class="xitems">
+              <p class="additem">{{ customize }}</p>
+              <span class="addprice">+${{ cart.customizableProfile }}/mo</span>
+            </div>
+          </div>
+        </div>
+        <div class="total" :cart="cart">
+          <p id="total-per-month">Total (per month)</p>
+          <span id="cart">+${{ cartTotal }}/mo</span>
+        </div>
+        </div>
+        <button class="back" id="backbtn3" onclick="prevPage3()">Go Back</button>
+        <button id="confirm">Confirm</button>
+        <div class="mobile-btn"></div>
+      </div>
+    </div>
+    <div id="page5">
+      <div class="plan-select4">
+      <div class="thankyou">
+        <div class="checkmark">
+          <img src="icon-thank-you.svg" alt="">
+        </div>
+        <h1 id="thanks">Thank you!</h1><br>
+        <p class="subhead">Thanks for confirming your subscription! We hope you have fun using our platform. If you
+          ever need support, please feel free to email us at support@loremgaming.com.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="vue-app.js"></script>
+  <script src="buttons.js"></script>
+
+</body>
+
+</html>

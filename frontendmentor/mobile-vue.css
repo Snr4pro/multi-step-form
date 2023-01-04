@@ -1,0 +1,317 @@
+@media (max-width: 860px) {
+    .blue-left {
+        width: 345px;
+        background-image: url(bg-sidebar-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 0px;
+    }
+    #page3, #page4 {
+        display: none
+    }
+    .steps {
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px
+    }
+    .step-title, .thin {
+        display: none
+    }
+    .form-back {
+        background-color: rgb(218, 229, 238);
+        padding: 0px;
+        width: 375px;
+        height: 650px;
+        border-radius: 0px;
+    }
+    .white-right {
+        background-color: white;
+        width: 345px;
+        height: 235px;
+        margin: auto;
+        position: absolute;
+        padding-top: 130px;
+        padding-bottom: 10px;
+        right: 700px;
+        left: 15px;
+        bottom: 170px;
+        z-index: 2;
+        border-radius: 8px;
+    }
+    input {
+        margin: auto;
+        width: 275px;
+        height: 35px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+    .white-right label {
+        font-size: 12px;
+        color: hsl(213, 96%, 18%);
+        margin-bottom: 2px;
+        margin-left: 25px
+    }
+    body {
+        background-color: rgb(30, 30, 30);
+    }
+    h1, .subhead {
+        position: relative;
+        bottom: 500px;
+        right: 130px;
+        left: 40px;
+        z-index: 3;
+    }
+    h1 {
+        bottom: 470px;
+        font-size: 23px;
+    }
+    .subhead {
+        width: 260px;
+        bottom: 510px;
+        line-height: 23px;
+        font-size: 15px;
+    }
+    button {
+        position: absolute;
+        left: 260px;
+        bottom: 0px;
+        width: 100px;
+        font-size: 15px;
+        border-radius: 4px;
+        padding: 12px;
+        z-index: 4;
+    }
+    .mobile-btn {
+        position: absolute;
+        left: 0px;
+        top: 590px;
+        display: block;
+        width: 375px;
+        height: 80px;
+        background-color: rgb(255, 255, 255);
+        z-index: 3;
+    }
+    .phone-btn {
+        display: none
+    }
+    .plan-select {
+        background-color: white;
+        position: relative;
+        bottom: 640px;
+        height: 465px;
+        width: 345px;
+        margin: auto;
+        border-radius: 8px;
+    }
+    #backbtn {
+        position: absolute;
+        right: 310px;
+        left: -5px;
+        top: 610px;
+        font-size: 14px;
+    }
+    #backbtn2 {
+        position: absolute;
+        right: 310px;
+        left: -5px;
+        top: 610px;
+        font-size: 14px;
+    }
+    #backbtn3 {
+        position: absolute;
+        right: 310px;
+        left: -5px;
+        top: 610px;
+        font-size: 14px;
+    }
+    .boxes {
+        width: 325px
+    }
+    #box1 {
+        position: absolute;
+        right: 325px;
+        left: 23px;
+        top: 140px;
+        width: 280px;
+        height: 70px;
+        z-index: 4;
+        background-size: 15%;
+    }
+    #box2 {
+        position: absolute;
+        right: 325px;
+        left: 23px;
+        top: 225px;
+        width: 280px;
+        height: 70px;
+        z-index: 4;
+        background-size: 15%;
+    }
+    #box3 {
+        position: absolute;
+        right: 325px;
+        left: 23px;
+        top: 310px;
+        width: 280px;
+        height: 70px;
+        z-index: 4;
+        background-size: 15%;
+    }
+    .month-year {
+        position: absolute;
+        right: 325px;
+        left: 22px;
+        top: 400px;
+        width: 300px;
+        height: 45px;
+        z-index: 4;
+        border-radius: 8px;
+    }
+    .plan-title {
+        margin-top: 25px;
+        margin-left: 60px
+    }
+    .price {
+        margin-left: 60px
+    }
+    .check {
+        position: absolute;
+        right: 100px;
+        left: 125px;
+        top: 10px
+    }
+    #chbox {
+        position: relative;
+        left: 2px;
+        bottom: 5px;
+        appearance: none
+    }
+    .month {
+        margin-right: 0px;
+        margin-left: 40px
+    }
+    .year {
+        margin-right: 55px
+    }
+    .plan-select2 {
+        background-color: white;
+        position: relative;
+        bottom: 640px;
+        height: 375px;
+        width: 345px;
+        margin: auto;
+        border-radius: 8px;
+    }
+    .plan-select3 {
+        background-color: white;
+        position: relative;
+        bottom: 640px;
+        height: 375px;
+        width: 345px;
+        margin: auto;
+        border-radius: 8px;
+    }
+    .plan-select4 {
+        background-color: white;
+        position: relative;
+        bottom: 640px;
+        height: 375px;
+        width: 345px;
+        margin: auto;
+        border-radius: 8px;
+    }
+    .checkboxes {
+        position: relative;
+        right: 100px;
+        left: 21px;
+        bottom: 100px;
+        top: 135px;
+        width: 300px;
+        height: 60px;
+        margin-bottom: 12px
+    }
+    #price-section {
+        position: relative;
+        right: 100px;
+        left: 23px;
+        bottom: 100px;
+        top: 135px;
+        width: 278px;
+        height: 60px
+    }
+    #price-section2 {
+        position: relative;
+        right: 100px;
+        left: 23px;
+        bottom: 100px;
+        top: 135px;
+        width: 278px;
+        height: 90px
+    }
+    .thankyou {
+        position: relative;
+        right: 100px;
+        left: 0px;
+        bottom: 100px;
+        top: 550px;
+        width: 270px;
+        height: 90px;
+    }
+    .checkmark {
+        position: relative;
+        right: 200px;
+        left: 37px;
+        top: -480px;
+    }
+    .checkmark img {
+        width: 55px
+    }
+    .extra-titles {
+        font-size: 15px;
+        margin-top: 20px;
+        line-height: 7px;
+        margin-left: -15px
+    }
+    .subxtra {
+        font-size: 13px;
+        line-height: 0px;
+    }
+    input[type="checkbox"] {
+        margin-top: 20px
+    }
+    #plan-type, .monthly-yearly {
+        font-size: 14px
+    }
+    #subprice {
+        font-size: 14px;
+    }
+    .total {
+        position: absolute;
+        top: 305px;
+        left: -15px;
+        width: 420px;
+        height: 35px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #cart {
+        margin-right: 45px;
+        font-size: 16px;
+    }
+    #confirm {
+        position: absolute;
+        left: 260px;
+        bottom: 0px;
+        width: 100px;
+        font-size: 15px;
+        border-radius: 4px;
+        padding: 12px;
+        z-index: 4;
+    }
+    #thanks {
+        text-align: center;
+        margin-right: 10px
+    }
+}  
